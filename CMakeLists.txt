@@ -98,5 +98,6 @@ endif()
 add_subdirectory(mfsdata)
 add_subdirectory(mfscgi)
 add_subdirectory(doc)
+add_subdirectory(3rdparty/crcutil)
 
 include(Packages.cmake)
