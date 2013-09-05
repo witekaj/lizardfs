@@ -7,7 +7,7 @@
 LZTOOL_SPECIALIZED_CONSTR( MFSFILEINFO )
 LZTOOL_SPECIALIZED_USAGE( MFSFILEINFO )
 {
-	fprintf(stderr,"show files info (shows detailed info of each file chunk)\n\nusage: %s name [name ...]\n", this->m_ProgName.c_str() );
+    fprintf(stderr,"show files info (shows detailed info of each file chunk)\n\nusage: %s name [name ...]\n", this->m_ToolName.c_str() );
 }
 
 typedef LizardCommand< MFSFILEINFO > FileInfoTool;

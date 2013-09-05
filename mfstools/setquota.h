@@ -7,7 +7,7 @@
 LZTOOL_SPECIALIZED_CONSTR( MFSSETQUOTA )
 LZTOOL_SPECIALIZED_USAGE( MFSSETQUOTA )
 {
-    fprintf(stderr,"set quota for given directory (directories)\n\nusage: %s [-nhH] [-iI inodes] [-lL length] [-sS size] [-rR realsize] dirname [dirname ...]\n", this->m_ProgName.c_str() );;
+    fprintf(stderr,"set quota for given directory (directories)\n\nusage: %s [-nhH] [-iI inodes] [-lL length] [-sS size] [-rR realsize] dirname [dirname ...]\n", this->m_ToolName.c_str() );;
     print_numberformat_options();
     fprintf(stderr," -i/-I - set soft/hard limit for number of filesystem objects\n");
     fprintf(stderr," -l/-L - set soft/hard limit for sum of files lengths\n");

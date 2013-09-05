@@ -6,7 +6,7 @@
 LZTOOL_SPECIALIZED_CONSTR( MFSGETQUOTA )
 LZTOOL_SPECIALIZED_USAGE( MFSGETQUOTA )
 {
-    fprintf(stderr,"get quota for given directory (directories)\n\nusage: %s [-nhH] dirname [dirname ...]\n", this->m_ProgName.c_str() );
+    fprintf(stderr,"get quota for given directory (directories)\n\nusage: %s [-nhH] dirname [dirname ...]\n", this->m_ToolName.c_str() );
     print_numberformat_options();
 }
 

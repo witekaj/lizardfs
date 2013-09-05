@@ -6,7 +6,7 @@
 LZTOOL_SPECIALIZED_CONSTR( MFSDELQUOTA )
 LZTOOL_SPECIALIZED_USAGE( MFSDELQUOTA )
 {
-    fprintf(stderr,"delete quota for given directory (directories)\n\nusage: %s [-nhHailsrAILSR] dirname [dirname ...]\n", this->m_ProgName.c_str() );
+    fprintf(stderr,"delete quota for given directory (directories)\n\nusage: %s [-nhHailsrAILSR] dirname [dirname ...]\n", this->m_ToolName.c_str() );
     print_numberformat_options();
     fprintf(stderr," -i/-I - delete inodes soft/hard quota\n");
     fprintf(stderr," -l/-L - delete length soft/hard quota\n");

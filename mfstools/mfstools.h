@@ -59,20 +59,19 @@ class LizardTool
 {
 
     protected:
-        static void printUsageLine();
-        const string m_ProgName;
-		const bool m_Deprecated;
+        void printUsageLine();
+        const string m_ToolName;
+        bool m_Deprecated;
         static map< string, LizardTool* > LIZARD_TOOLS_MAP;
-
 
     public:
         const static char* LIZ_PREF;
         const static char* MFS_PREF;
         bool static registerTool( LizardTool* pTool );
 
-        LizardTool( const string& pProgName );
-        static void showHelpMsg();
-        static void createFsLink( const char* pLzMfsToolName );
+        LizardTool( const string& pToolName );
+        void showHelpMsg();
+        static void createFsLink( const char* pToolName );
         virtual pair< int, int> getFunctionEnum() = 0;
         virtual void usage() = 0;
         string getToolName();
@@ -91,7 +90,7 @@ class LizardCommand : public LizardTool
         LizardCommand()
         {}
 
-        LizardCommand( const string& pCmdName ) : LizardTool( pCmdName )
+        LizardCommand( const string& pToolName ) : LizardTool( pToolName )
         {}
 
         void usage()
@@ -109,8 +108,9 @@ class LizardDeprecatedCommand : public LizardCommand< T >
     public:
 		static bool m_DeprecatedToolRegistered;
 
-        LizardDeprecatedCommand( const string& pCmdName ) : LizardCommand< T >( pCmdName ) //, LizardCommand< T >::m_Deprecated( true )
-		{
+        LizardDeprecatedCommand( const string& pToolName ) :
+            LizardCommand< T >( pToolName ) {
+                        this->m_Deprecated = true;
 
 		}
 };

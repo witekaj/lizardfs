@@ -2546,24 +2546,24 @@ int main(int argc,char **argv) {
 
 string LizardTool::getToolName()
 {
-    return this->m_ProgName;
+    return this->m_ToolName;
 }
 
 void LizardTool::printUsageLine()
 {
-    //fprintf(stderr,"%s multi tool\n\nusage:\n\t%stools create - create symlinks (%s<toolname> -> %s)\n", LIZ_PREF, LIZ_PREF, LIZ_PREF, m_ProgName.c_str() );
-    //fprintf(stderr,"%s multi tool\n\n usage:\n\t%stools create - create symlinks	 ([%s|%s]<toolname> -> %s)\n", MFS_PREF, MFS_PREF, LIZ_PREF, MFS_PREF, m_ProgName.c_str() );
+    //fprintf(stderr,"%s multi tool\n\nusage:\n\t%stools create - create symlinks (%s<toolname> -> %s)\n", LIZ_PREF, LIZ_PREF, LIZ_PREF, m_ToolName.c_str() );
+    fprintf(stderr,"%s multi tool\n\n usage:\n\t%stools create - create symlinks	 ([%s|%s]<toolname> -> %s)\n", MFS_PREF, MFS_PREF, LIZ_PREF, MFS_PREF, m_ToolName.c_str() );
 }
 
 const char* LizardTool::LIZ_PREF = "lizardfs";
 const char* LizardTool::MFS_PREF = "mfs";
 
-LizardTool::LizardTool( const string& pProgName ): m_ProgName(  pProgName ), m_Deprecated( false )
+LizardTool::LizardTool( const string& pToolName ): m_ToolName(  pToolName ), m_Deprecated( false )
 {}
 
 void LizardTool::showHelpMsg()
 {
-    printUsageLine();
+    this->printUsageLine();
 
     fprintf(stderr,"\ntools:\n");
 
@@ -2583,10 +2583,10 @@ void LizardTool::showHelpMsg()
     fprintf(stderr,"\t%srsettrashtime = %ssettreshtime -r\n", MFS_PREF, MFS_PREF );
 }
 
-void LizardTool::createFsLink( const char* pLzMfsToolName )
+void LizardTool::createFsLink( const char* pToolName )
 {
     for( map< string, LizardTool* >::iterator iter = LIZARD_TOOLS_MAP.begin(); iter != LIZARD_TOOLS_MAP.end(); ++iter ) {
-        if ( symlink( iter->second->getToolName().c_str(), pLzMfsToolName ) < 0 ) {
+        if ( symlink( iter->second->getToolName().c_str(), pToolName ) < 0 ) {
                 perror( ( string( "error creating symlink '" ) + iter->second->getToolName().c_str() + "'").c_str() );
         }
     }

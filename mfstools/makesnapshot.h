@@ -6,7 +6,7 @@
 LZTOOL_SPECIALIZED_CONSTR( MFSMAKESNAPSHOT )
 LZTOOL_SPECIALIZED_USAGE( MFSMAKESNAPSHOT )
 {
-    fprintf(stderr,"make snapshot (lazy copy)\n\nusage: %s [-o] src [src ...] dst\n",this->m_ProgName.c_str() );
+    fprintf(stderr,"make snapshot (lazy copy)\n\nusage: %s [-o] src [src ...] dst\n",this->m_ToolName.c_str() );
 }
 
 typedef LizardCommand< MFSMAKESNAPSHOT > MakeSnapshotTool;

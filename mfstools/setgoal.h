@@ -6,7 +6,7 @@
 LZTOOL_SPECIALIZED_CONSTR( MFSSETGOAL )
 LZTOOL_SPECIALIZED_USAGE( MFSSETGOAL )
 {
-    fprintf(stderr,"set objects goal (desired number of copies)\n\nusage: %s [-nhHr] GOAL[-|+] name [name ...]\n", this->m_ProgName.c_str() );
+    fprintf(stderr,"set objects goal (desired number of copies)\n\nusage: %s [-nhHr] GOAL[-|+] name [name ...]\n", this->m_ToolName.c_str() );
     print_numberformat_options();
     print_recursive_option();
     fprintf(stderr," GOAL+ - increase goal to given value\n");
